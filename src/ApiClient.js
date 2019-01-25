@@ -157,7 +157,7 @@
    */
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
-    if (typeof window === 'undefined' &&
+    if (Object.prototype.toString.call(global.process) === '[object process]' &&
         typeof require === 'function' &&
         require('fs') &&
         param instanceof require('fs').ReadStream) {
