@@ -324,7 +324,7 @@
       var authNames = ['Token'];
       var contentTypes = [];
       var accepts = ['image/png', 'image/jpeg', 'applicant/pdf'];
-      var returnType = File;
+      var returnType = (typeof File !== 'undefined') ? File : [];
 
       return this.apiClient.callApi(
         '/applicants/{applicant_id}/documents/{document_id}/download', 'GET',
@@ -370,7 +370,7 @@
       var authNames = ['Token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = File;
+      var returnType = (typeof File !== 'undefined') ? File : [];
 
       return this.apiClient.callApi(
         '/live_photos/{live_photo_id}/download', 'GET',
