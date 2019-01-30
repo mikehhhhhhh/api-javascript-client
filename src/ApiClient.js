@@ -391,8 +391,8 @@
         if (_formParams.hasOwnProperty(key)) {
           if (this.isFileParam(_formParams[key])) {
             // file field
-            if (test.hasOwnProperty('filename')) {
-              request.attach(key, _formParams[key], test.filename);
+            if (_formParams[key].hasOwnProperty('filename')) {
+              request.attach(key, _formParams[key], _formParams[key].filename);
             } else {
               request.attach(key, _formParams[key]);
             }            
